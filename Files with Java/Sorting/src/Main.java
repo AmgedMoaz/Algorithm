@@ -17,13 +17,14 @@ public class Main {
         // bubbleSort(arr,n);
 
         // Selection sort\
-        selectionSort(arr,n);
+        // selectionSort(arr,n);
 
-        System.out.println("After selection sorting");
+        // Insertion sort
+        insertionSort(arr,n);
+
+        System.out.println("After insertion sorting");
         for(int i = 0 ; i < n ; i++)
             System.out.print(arr[i] + " ");
-
-
 
     }
     static void bubbleSort(int arr[] , int n) {
@@ -53,6 +54,18 @@ public class Main {
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
             }
+        }
+    }
+
+    static void insertionSort(int arr[] , int n) {
+        for(int i = 1 ; i < n ; i++) {
+            int key = arr[i];
+            int j = i-1;
+            while(j >= 0 && key < arr[j]) {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = key;
         }
     }
 
