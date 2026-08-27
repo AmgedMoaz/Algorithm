@@ -69,4 +69,19 @@ public class Main {
         }
     }
 
+    static void mergeSort(int arr[] , int left , int right) {
+        if(left < right) {
+            int mid = left + (right-left)/2;
+
+            // Divide left section
+            mergeSort(arr,left,mid);
+
+            // Divide right section
+            mergeSort(arr,mid+1,right);
+
+            // Merge function
+            // merge(arr,left,mid,right);
+        }
+    }
+
 }
