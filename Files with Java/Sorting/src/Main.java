@@ -83,7 +83,7 @@ public class Main {
             mergeSort(arr,mid+1,right);
 
             // Merge function
-            // merge(arr,left,mid,right);
+            merge(arr,left,mid,right);
         }
     }
     static void merge(int arr[] , int left , int mid , int right) {
