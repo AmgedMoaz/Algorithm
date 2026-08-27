@@ -3,18 +3,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void merge(int arr[] , int left , int mid , int right);
+
 // Merge Sort implementation
 void mergeSort(int arr[] , int left , int right) {
-    int mid = left + (right - left)/2;
+    if(left < right){
+        int mid = left + (right - left)/2;
 
-    // Divide left section
-    mergeSort(arr,left,mid);
-    
-    // Divide right section
-    mergeSort(arr,mid+1,right);
+        // Divide left section
+        mergeSort(arr,left,mid);
 
-    // Merge function
-    merge(arr,left,mid,right);
+        // Divide right section
+        mergeSort(arr,mid+1,right);
+
+        // Merge function
+        merge(arr,left,mid,right);
+    }
 }
 void merge(int arr[],int left,int mid,int right) {
 
@@ -28,7 +32,7 @@ void merge(int arr[],int left,int mid,int right) {
 
     // 3. نسخ البيانات إلى المصفوفات المؤقتة
     for(int i = 0 ; i < n1 ; i++) L[i] = arr[left+i];
-    for(int i = 0 ; i , n2 ; i++) R[i] = arr[mid+1+i];
+    for(int i = 0 ; i < n2 ; i++) R[i] = arr[mid+1+i];
 
     // 4. دمج عناصر المصفوفات بالترتيب الصحيح
     int i = 0 , j = 0 , k = left;
@@ -65,7 +69,9 @@ int main() {
     int arr[n];
     for(int i = 0 ; i < n ; i++) cin >> arr[i];
 
-
+    mergeSort(arr,0,n-1);
+    cout << "After merging sort" << endl;
+    for(int i = 0 ; i < n ; i++) cout << arr[i] << " ";
 
     return 0;
 }
