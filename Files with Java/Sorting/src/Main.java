@@ -20,9 +20,11 @@ public class Main {
         // selectionSort(arr,n);
 
         // Insertion sort
-        insertionSort(arr,n);
+        // insertionSort(arr,n);
 
-        System.out.println("After insertion sorting");
+        mergeSort(arr,0,n-1);
+
+        System.out.println("After merging sorting");
         for(int i = 0 ; i < n ; i++)
             System.out.print(arr[i] + " ");
 
