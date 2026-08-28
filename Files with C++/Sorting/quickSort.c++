@@ -3,6 +3,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int partition(int arr[], int low , int high);
+
+// Implementation quick sort
+void quickSort(int arr[] , int low , int high) {
+    if(low >= high) return;
+
+    int pivotIndex = partition(arr,low,high);
+    quickSort(arr,low,pivotIndex-1);
+    quickSort(arr,pivotIndex+1,high);
+}
+
 int main() {
 
 int n;
