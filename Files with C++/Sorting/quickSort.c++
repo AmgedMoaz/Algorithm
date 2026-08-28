@@ -13,6 +13,21 @@ void quickSort(int arr[] , int low , int high) {
     quickSort(arr,low,pivotIndex-1);
     quickSort(arr,pivotIndex+1,high);
 }
+int partition(int arr[] , int low , int high) {
+    int pivot = arr[high];
+    int i = low-1;
+
+    for(int j = 0 ; j < high ; j++) {
+        if(arr[j] < pivot) {
+            i++;
+            swap(arr[j],arr[i]);
+        }
+    }
+
+    swap(arr[i+1],pivot);
+    return i+1;
+
+}
 
 int main() {
 
