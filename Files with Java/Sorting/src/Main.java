@@ -22,9 +22,11 @@ public class Main {
         // Insertion sort
         // insertionSort(arr,n);
 
-        mergeSort(arr,0,n-1);
+        // mergeSort(arr,0,n-1);
 
-        System.out.println("After merging sorting");
+        quickSort(arr,0,n-1);
+
+        System.out.println("After quick sorting");
         for(int i = 0 ; i < n ; i++)
             System.out.print(arr[i] + " ");
 
