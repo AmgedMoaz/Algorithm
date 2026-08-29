@@ -165,4 +165,25 @@ public class Main {
     }
 
     // Heap sort
+    static void heapSort(int[] arr) {
+        int n = arr.length;
+
+        // 1. بناء الـ Max-Heap (إعادة ترتيب المصفوفة)
+        // نفتح الحلقة من آخر عقدة غير ورقية (n/2 - 1) وننزل إلى الجذر (0)
+        for(int i = n/2-1 ; i >= 0 ; i--) {
+            heapify(arr, n, i);
+        }
+
+        // 2. استخراج العناصر من الكومة واحدًا تلو الآخر
+        for(int i = n-1 ; i > 0 ; i--) {
+            // Swap function
+            int temp = arr[i];
+            arr[i] = arr[0];
+            arr[0] = temp;
+
+            // استدعاء heapify على الكومة المُصغّرة لإعادة ترتيب الجذر
+            heapify(arr,i,0);
+        }
+    }
+
 }
