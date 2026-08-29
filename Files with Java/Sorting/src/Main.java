@@ -32,6 +32,7 @@ public class Main {
 
     }
 
+    // Bubble sort
     static void bubbleSort(int arr[] , int n) {
         for(int i = 0 ; i < n-1 ; i++) {
             for(int j = 0 ; j < n-i-1 ; j++) {
@@ -45,6 +46,7 @@ public class Main {
         }
     }
 
+    // Selection sort
     static void selectionSort(int arr[] , int n) {
         for(int i = 0 ; i < n-1 ; i++) {
             int minIndex = i;
@@ -62,6 +64,7 @@ public class Main {
         }
     }
 
+    // Insertion sort
     static void insertionSort(int arr[] , int n) {
         for(int i = 1 ; i < n ; i++) {
             int key = arr[i];
@@ -74,6 +77,7 @@ public class Main {
         }
     }
 
+    // Merge sort
     static void mergeSort(int arr[] , int left , int right) {
         if(left < right) {
             int mid = left + (right-left)/2;
@@ -131,6 +135,7 @@ public class Main {
         }
     }
 
+    // Quick sort
     static void quickSort(int arr[] , int low , int high) {
         if(low < high) {
             int pivotIndex = partition(arr,low,high);
@@ -159,4 +164,5 @@ public class Main {
         return i+1;
     }
 
+    // Heap sort
 }
