@@ -22,11 +22,15 @@ public class Main {
         // Insertion sort
         // insertionSort(arr,n);
 
+        // Merge sort
         // mergeSort(arr,0,n-1);
 
-        quickSort(arr,0,n-1);
+        // Quick sort
+        // quickSort(arr,0,n-1);
 
-        System.out.println("After quick sorting");
+        heapSort(arr);
+
+        System.out.println("After heap sorting");
         for(int i = 0 ; i < n ; i++)
             System.out.print(arr[i] + " ");
 
