@@ -28,7 +28,7 @@ public class Main{
         // Like sort method in C++
         Arrays.sort(arr);
 
-        int result = binarySearch(arr,n,target);
+        int result = binary_Search(arr,0,n-1,target);
         if(result <= -1) {
             System.out.println("Not found");
         }else {
@@ -48,6 +48,7 @@ public class Main{
     }
 
     // Binary search method
+    // Iterative style
     static int binarySearch(int []arr , int n , int target) {
         int left = 0;
         int right = n-1;
@@ -62,5 +63,19 @@ public class Main{
             }
         }
         return -1;
+    }
+    // Recursive style
+    static int binary_Search(int []arr , int left , int right , int target) {
+        if(left <= right) {
+            int mid = (left+right) / 2;
+            if(arr[mid] == target) {
+                return mid;                                         // base case
+            }else if(arr[mid] > target) {
+                return binary_Search(arr,left,mid-1,target);   // recursive case
+            }else {
+                return binary_Search(arr,mid+1,right,target);   // recursive case
+            }
+        }
+        return -1;                                                   // base case
     }
 }
